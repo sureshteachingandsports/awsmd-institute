@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #ffffff;
+  --secondary: #94a3b8;
+  --accent: #00f2fe;
+  --background: #000000;
+}
+
+.dark {
+  --primary: #ffffff;
+  --secondary: #94a3b8;
+  --accent: #00f2fe;
+  --background: #000000;
+}
+
+.light {
+  --primary: #000000;
+  --secondary: #475569;
+  --accent: #0ea5e9;
+  --background: #ffffff;
+}
+
+body {
+  color: var(--primary);
+  background: var(--background);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-gradient {
+  background: radial-gradient(
+    circle at center,
+    rgba(125, 95, 255, 0.3) 0%,
+    rgba(0, 242, 254, 0.1) 50%,
+    transparent 80%
+  );
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+    filter: brightness(1.4);
+  }
+}
+
+@keyframes rotate-3d {
+  from {
+    transform: perspective(1000px) rotateX(0) rotateY(0);
+  }
+  to {
+    transform: perspective(1000px) rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-rotate-3d {
+  animation: rotate-3d 20s linear infinite;
+}
+
+.animate-twinkle {
+  animation: star-twinkle 3s ease-in-out infinite;
+}
+
+.bg-gradient-radial {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
+.backdrop-blur-xs {
+  backdrop-filter: blur(2px);
+}
+
+.backdrop-blur-2xs {
+  backdrop-filter: blur(1px);
+}
+
+/* 3D Perspective Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Space theme elements */
+
+
+.space-glow {
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.3),
+              0 0 40px rgba(125, 95, 255, 0.2),
+              0 0 60px rgba(79, 172, 254, 0.1);
+}
+
+.tech-border {
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  box-shadow: inset 0 0 10px rgba(125, 95, 255, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 242, 254, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(125, 95, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Custom selection color */
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+/* Custom focus outline */
+:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  box-shadow: 0 0 20px rgba(125, 95, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 242, 254, 0.1);
+}
+
+/* Tech grid */
+.tech-grid {
+  background-image: linear-gradient(rgba(0, 242, 254, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(125, 95, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
